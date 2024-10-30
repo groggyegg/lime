@@ -1,0 +1,35 @@
+name: Repository
+
+on:
+  workflow_dispatch:
+
+env:
+  GH_REPOS: >
+    groggyegg/plugin.video.dramacool#
+    groggyegg/plugin.video.duboku#
+    groggyegg/repository.lime#
+    groggyegg/script.module.peewee#
+    groggyegg/script.module.xbmcext#
+    soraxas/aznhusband.github.io#:src/plugin.video.icdrama
+  GH_TOKEN: ${{ github.token }}
+  GIT_CLONE_PROTECTION_ACTIVE: false
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    name: Generate
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install gitpython
+      - run: wget -P $RUNNER_TEMP https://raw.githubusercontent.com/chadparry/kodi-repository.chad.parry.org/master/tools/create_repository.py
+      - run: chmod +x $RUNNER_TEMP/create_repository.py
+      - run: sed -i 's/checkout(clone_branch)/checkout(clone_branch, force=True)/' $RUNNER_TEMP/create_repository.py
+      - run: $RUNNER_TEMP/create_repository.py $(for repo in $GH_REPOS; do printf "https://github.com/${repo//#/#$(gh api /repos/${repo%#*}/releases/latest | jq -r '.tag_name')} "; done)
+      - run: git config user.name github-actions[bot]
+      - run: git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - run: git add .
+      - run: git commit --amend --reset-author --no-edit
+      - run: git push --force

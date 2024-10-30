@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<addons><addon id="plugin.video.dramacool" name="DramaCool" version="3.2.11" provider-name="groggyegg">
+    <requires>
+        <import addon="script.module.beautifulsoup4" />
+        <import addon="script.module.peewee" />
+        <import addon="script.module.requests" />
+        <import addon="script.module.resolveurl" />
+        <import addon="script.module.xbmcext" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="dramacool/addon.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <description lang="en_GB">Watch Asian Drama and Korean Show with English subtitles on DramaCool.</description>
+        <platform>all</platform>
+        <license>MIT License</license>
+        <source>https://github.com/groggyegg/plugin.video.dramacool</source>
+        <news>v3.2.11 (2024-06-06)
+            - new route for tmdb helper
+        </news>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon><addon id="plugin.video.duboku" name="Duboku" version="3.1.4" provider-name="groggyegg">
+    <requires>
+        <import addon="script.module.beautifulsoup4" />
+        <import addon="script.module.peewee" />
+        <import addon="script.module.resolveurl" />
+        <import addon="script.module.requests" />
+        <import addon="script.module.xbmcext" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="duboku/addon.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <description lang="en_GB">Watch Asian drama, movie, show and animation.</description>
+        <platform>all</platform>
+        <license>MIT License</license>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon><addon id="repository.lime" name="Lime Add-ons" version="1.0.4" provider-name="groggyegg">
+    <extension point="xbmc.addon.repository" name="Lime Add-ons">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/groggyegg/lime/master/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/groggyegg/lime/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/groggyegg/lime/master</datadir>
+        </dir>
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/Gujal00/smrzips/master/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Lime Repository</summary>
+        <description lang="en_GB">Download and install add-ons from Lime Repository.</description>
+        <platform>all</platform>
+        <license>MIT License</license>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon><addon id="script.module.peewee" name="Peewee" version="3.15.4" provider-name="groggyegg">
+    <extension point="xbmc.python.module" library="." />
+    <extension point="xbmc.addon.metadata">
+        <description lang="en_GB">Peewee is a simple and small ORM. It has few (but expressive) concepts, making it easy to learn and intuitive to use.</description>
+        <platform>all</platform>
+        <license>MIT License</license>
+        <source>https://github.com/groggyegg/script.module.peewee</source>
+        <assets>
+            <icon>docs/peewee3-logo.png</icon>
+        </assets>
+    </extension>
+</addon><addon id="script.module.xbmcext" name="XBMCExt" version="1.5.2" provider-name="groggyegg">
+    <requires>
+        <import addon="script.module.six" />
+    </requires>
+    <extension point="xbmc.python.module" library="." />
+    <extension point="xbmc.addon.metadata">
+        <description lang="en_GB">XBMCExt extends utilities, dialogs, and various control widgets.</description>
+        <platform>all</platform>
+        <license>MIT License</license>
+        <source>https://github.com/groggyegg/script.module.xbmcext</source>
+        <assets>
+            <icon>resources/icon.png</icon>
+        </assets>
+    </extension>
+</addon><addon id="plugin.video.icdrama" version="2.3.5" name="Icdrama" provider-name="aznhusband, dumbo0001, s_h, boleanly, mugol, General-Meow, cthlo, soraxas, andya4">
+  <requires>
+    <import addon="script.module.html5lib" version="0.999.0" />
+    <import addon="script.module.beautifulsoup4" version="4.3.2" />
+    <import addon="script.module.requests" version="2.9.1" />
+    <import addon="script.module.resolveurl" version="5.1.86" />
+    <import addon="script.module.future" version="0.17.1" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Dramas, shows, and movies from icdrama.se</summary>
+    <description>Provides contents from icdrama.se. "Happy wife, happy life"</description>
+    <disclaimer>This addon is not affiliated with icdrama.se</disclaimer>
+    <platform>all</platform>
+    <license>MIT License</license>
+    <assets>
+        <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon></addons>
